@@ -1,7 +1,11 @@
 require 'quiz'
 describe Quiz do
-  quiz = Quiz.new
-  it 'responds to #ask with one argument' do
-  expect(quiz).to respond_to(:ask).with(1).argument
+
+  it { is_expected.to respond_to(:ask) }
+
+  describe '#ask' do
+    it 'prints a question to the terminal' do
+      expect(subject.ask).to eq ("What is the capital of Germany?")
+    end
   end
 end
